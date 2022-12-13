@@ -28,9 +28,12 @@ const folders = [
 function App (props) {
 
   const [showClock, setShowClock] = useState(true)
-  const toggleClock = useEffect(()=>{
-    setShowClock(!showClock)
-  }, [])
+
+    const toggleClock = e => {
+    e.preventDefault();
+    setShowClock(oldShowTime => (!oldShowTime));
+
+  };
 
   return (
           <div className="widgets">
