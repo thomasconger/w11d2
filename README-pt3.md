@@ -11,7 +11,7 @@ API keys should be stored in a __.env__ file, so create a __.env__ file in your
 root directory and paste the following into that file:
 
 ```sh
-REACT_APP_WEATHER_API=b65b43cc09af164f099fe5a807d56972
+# REACT_APP_WEATHER_API=b65b43cc09af164f099fe5a807d56972
 # REACT_APP_WEATHER_API=8119be3ea48a73ad298d0b280a0d98ad
 # REACT_APP_WEATHER_API=e14bad32abd13d701515672995a36e6a
 # REACT_APP_WEATHER_API=2a7d6ce7cdd33961673705d6f754d472

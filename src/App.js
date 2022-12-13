@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import Clock, { ClockToggle } from './components/Clock';
 import Folder from './components/Folder';
-// import Weather from './components/Weather';
+import Weather from './components/Weather';
 import AutoComplete from './components/Auto';
 
 const names = [
@@ -38,7 +38,7 @@ function App (props) {
   return (
           <div className="widgets">
             <Folder folders={folders} />
-            {/* <Weather /> */}
+            <Weather />
             <ClockToggle toggleClock={toggleClock} />
             {showClock && <Clock />}
             <AutoComplete names={names} />

@@ -1,6 +1,7 @@
 import React from 'react';
 import { toQueryString } from '../utils';
 
+
 class Weather extends React.Component {
     constructor(props) {
       super(props);
@@ -8,7 +9,7 @@ class Weather extends React.Component {
         weather: null
       };
     }
-    
+
     componentDidMount() {
       navigator.geolocation.getCurrentPosition(
         this.pollWeather,
@@ -29,14 +30,14 @@ class Weather extends React.Component {
       "process.env.<variable_name>". Make sure to .gitignore your .env file!
       Also remember to restart your server (i.e., re-run "npm start") whenever
       you change your .env file. */
-      const apiKey = '???';
+      const apiKey = process.env.REACT_APP_WEATHER_API
 
       const params = {
         lat: location.coords.latitude,
         lon: location.coords.longitude,
         appid: apiKey
       };
-      
+
       url += toQueryString(params);
 
       const res = await fetch(url);
@@ -52,7 +53,7 @@ class Weather extends React.Component {
   render() {
     const weather = this.state.weather;
     let content = <div className='loading'>loading weather...</div>;
-    
+
     if (weather) {
       const temp = (weather.main.temp - 273.15) * 1.8 + 32;
       content = (
